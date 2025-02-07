@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江苏好又香食品科技有限公司</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            color: #4CAF50;
+        }
+
+        /* 头部 */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        /* 轮播图 */
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+        .carousel img {
+            width: 100%;
+            display: inline-block;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 内容区域 */
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .product-item {
+            width: 23%;
+            margin-bottom: 20px;
+        }
+        .product-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-item h3 {
+            margin: 10px 0;
+        }
+
+        /* 合作单位 */
+        #partners {
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .partners-logos img {
+            height: 50px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .partners-logos img:hover {
+            opacity: 1;
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\商标.jpeg" alt="公司Logo" style="height: 50px; margin-right: 15px;">
+            <h1>江苏好又香食品科技有限公司</h1>
+        </div>
+        <p>专注冷冻调理肉制品</p>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#home">首页</a>
+        <a href="#products">产品中心</a>
+        <a href="#about">关于我们</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+
+    <!-- 轮播图 -->
+    <div class="carousel">
+        <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\小炒黄牛肉.jpg" alt="轮播图2">
+        <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\黑椒风味柳.png" alt="轮播图3">
+        <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\精品霞糕.png" alt="轮播图4">
+        <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\千叶豆腐.png" alt="轮播图5">
+    </div>
+
+    <!-- 首页 -->
+    <section id="home">
+        <h2>公司简介</h2>
+        <p>江苏好又香食品科技有限公司是一家专注于冷冻调理肉制品生产的企业，致力于为消费者提供高品质、健康美味的食品。</p>
+    </section>
+
+    <!-- 产品中心 -->
+    <section id="products">
+        <h2>产品中心</h2>
+        <div class="products">
+            <div class="product-item">
+                <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\小炒黄牛肉.jpg" alt="小炒牛肉片">
+                <h3>小炒牛肉片</h3>
+            </div>
+            <div class="product-item">
+                <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\黑椒风味柳.png" alt="黑椒风味柳">
+                <h3>黑椒风味柳</h3>
+            </div>
+            <div class="product-item">
+                <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\精品霞糕.png" alt="精品霞糕">
+                <h3>精品霞糕</h3>
+            </div>
+            <div class="product-item">
+                <img src="F:\坚果云\我的坚果云\好又香食品\网页\产品\千叶豆腐.png" alt="千叶豆腐">
+                <h3>千叶豆腐</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about">
+        <h2>关于我们</h2>
+        <p>我们拥有先进的生产设备和严格的质量管理体系，确保每一款产品都符合高标准的质量要求。</p>
+    </section>
+
+    <!-- 合作单位 -->
+    <section id="partners">
+        <h2>合作单位</h2>
+        <div class="partners-logos">
+            <img src="partner1.png" alt="合作单位1">
+            <img src="partner2.png" alt="合作单位2">
+            <img src="partner3.png" alt="合作单位3">
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact">
+        <h2>联系我们</h2>
+        <p>电话：0512-65695979</p>
+        <p>地址：江苏省淮安市洪泽经济开发区砚马河路23号</p>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <p>&copy; 2023 江苏好又香食品科技有限公司</p>
+    </footer>
+</body>
+</html>
