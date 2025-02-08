@@ -53,7 +53,7 @@
             white-space: nowrap;
         }
         .carousel img {
-            width: 100%;
+            width: 60%; /* 缩小40% */
             display: inline-block;
             animation: slide 10s linear infinite;
         }
@@ -136,7 +136,7 @@
     <div class="carousel">
         <img src="小炒黄牛肉.jpg" alt="轮播图2">
         <img src="黑椒风味柳.png" alt="轮播图3">
-        <img src="精品霞糕.png" alt="轮播图4">
+        <img src="精品蛋糕.png" alt="轮播图4">
         <img src="千叶豆腐.png" alt="轮播图5">
     </div>
 
@@ -159,8 +159,8 @@
                 <h3>黑椒风味柳</h3>
             </div>
             <div class="product-item">
-                <img src="精品霞糕.png" alt="精品霞糕">
-                <h3>精品霞糕</h3>
+                <img src="精品蛋糕.png" alt="精品蛋糕">
+                <h3>精品蛋糕</h3>
             </div>
             <div class="product-item">
                 <img src="千叶豆腐.png" alt="千叶豆腐">
@@ -192,7 +192,24 @@
 
     <!-- 底部 -->
     <footer>
-        <p>&copy; 2024 江苏好又香食品科技有限公司</p>
+        <p>&copy; 2023 江苏好又香食品科技有限公司</p>
     </footer>
+
+    <!-- 懒加载脚本 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll(".lazyload");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            images.forEach((img) => observer.observe(img));
+        });
+    </script>
 </body>
 </html>
