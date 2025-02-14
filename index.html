@@ -41,8 +41,8 @@
         }
 
        .logo img {
-            height: 50px;
-            margin-right: 15px;
+            height: 70px; /* 原高度 50px，放大 40% 后为 70px */
+            margin-right: 5px; /* 靠近公司名称 */
         }
 
        .company-name {
@@ -63,8 +63,8 @@
 
         /* 轮播图 */
        .carousel {
-            width: 50%; /* 轮播图缩小50% */
-            margin: 0 auto; /* 居中显示 */
+            width: 80%; /* 原宽度 50%，增加 60% 后约为 80% */
+            margin: 0 auto;
             overflow: hidden;
             position: relative;
         }
@@ -106,19 +106,21 @@
        .about-container {
             display: flex;
             margin-top: 40px;
+            align-items: center; /* 垂直居中对齐 */
         }
 
        .about-image {
-            width: 50%;
+            width: 40%; /* 调整图片区域宽度 */
             position: relative;
-            height: 300px; /* 固定高度 */
-            overflow: hidden; /* 超出部分隐藏 */
+            height: 350px; /* 适当增加高度 */
+            overflow: hidden;
+            margin: 0 20px; /* 增加左右边距 */
         }
 
        .about-image img {
             width: 100%;
-            height: 100%; /* 图片高度填满容器 */
-            object-fit: cover; /* 保持比例填充容器 */
+            height: 100%;
+            object-fit: cover;
             position: absolute;
             opacity: 0;
             transition: opacity 1s ease - in - out;
@@ -129,7 +131,7 @@
         }
 
        .about-text {
-            width: 50%;
+            width: 60%;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -183,8 +185,8 @@
 
        .product-item img {
             width: 100%;
-            height: 200px; /* 固定产品图片高度 */
-            object-fit: cover; /* 保持比例填充容器 */
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
