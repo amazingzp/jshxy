@@ -42,7 +42,7 @@
 
        .logo img {
             height: 70px; /* 原高度 50px，放大 40% 后为 70px */
-            margin-right: 5px; /* 靠近公司名称 */
+            margin-right: 1em; /* 距离公司名称一个字符左右位置 */
         }
 
        .company-name {
@@ -63,7 +63,8 @@
 
         /* 轮播图 */
        .carousel {
-            width: 80%; /* 原宽度 50%，增加 60% 后约为 80% */
+            width: 80%; /* 显示宽度保持之前调整后的 80% */
+            height: 300px; /* 假设原高度为 500px，缩小为 60% 即 300px，可根据实际情况调整 */
             margin: 0 auto;
             overflow: hidden;
             position: relative;
@@ -78,6 +79,7 @@
        .carousel img {
             width: 25%;
             object-fit: cover;
+            height: 100%; /* 让图片高度适应容器高度 */
         }
 
         @keyframes slide {
@@ -110,9 +112,9 @@
         }
 
        .about-image {
-            width: 40%; /* 调整图片区域宽度 */
+            width: 72%; /* 原宽度 40%，增加 80% 后约为 72% */
             position: relative;
-            height: 350px; /* 适当增加高度 */
+            height: 350px; /* 高度不变 */
             overflow: hidden;
             margin: 0 20px; /* 增加左右边距 */
         }
@@ -131,7 +133,7 @@
         }
 
        .about-text {
-            width: 60%;
+            width: 28%; /* 调整文字区域宽度 */
             padding: 20px;
             box-sizing: border-box;
         }
