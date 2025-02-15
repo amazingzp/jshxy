@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>江苏好又香食品科技有限公司</title>
     <style>
-        /* 引入行楷字体，确保字体文件存在 */
         @font-face {
             font-family: 'XingKai';
-            src: url('xingkai.ttf'); /* 替换为实际的行楷字体文件路径 */
+            src: url('xingkai.ttf');
         }
 
-        /* 全局样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -30,7 +28,7 @@
             color: #4CAF50;
         }
 
-        /* 头部布局 */
+        /* 头部样式 */
         header {
             background-color: #4CAF50;
             color: white;
@@ -40,12 +38,12 @@
             justify-content: space-between;
         }
 
-       .logo img {
-            height: 70px; /* 原高度 50px，放大 40% 后为 70px */
-            margin-right: 1em; /* 距离公司名称一个字符左右位置 */
+        .logo img {
+            height: 70px;
+            margin-right: 5px;
         }
 
-       .company-name {
+        .company-name {
             font-family: 'XingKai', cursive;
             font-size: 2.5em;
             margin: 0;
@@ -61,97 +59,92 @@
             font-size: 1.1em;
         }
 
-        /* 轮播图 */
-       .carousel {
-            width: 80%; /* 显示宽度保持之前调整后的 80% */
-            height: 300px; /* 假设原高度为 500px，缩小为 60% 即 300px，可根据实际情况调整 */
-            margin: 0 auto;
+ /* 修复后的轮播图样式 */
+ .carousel {
+            width: 80%;
+            height: 600px;
+            margin: 20px auto;
             overflow: hidden;
             position: relative;
         }
 
-       .carousel-inner {
+        .carousel-inner {
             display: flex;
-            width: 400%;
-            animation: slide 10s linear infinite;
+            width: 400%; /* 4张图片 × 100% */
+            height: 100%;
+            animation: slide 25s infinite linear;
         }
 
-       .carousel img {
-            width: 25%;
+        .carousel img {
+            width: 25%; /* 每张占容器25% → 页面宽度的20% */
+            height: 100%;
             object-fit: cover;
-            height: 100%; /* 让图片高度适应容器高度 */
+            flex-shrink: 0;
         }
 
         @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-25%);
-            }
-
-            50% {
-                transform: translateX(-50%);
-            }
-
-            75% {
-                transform: translateX(-75%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); } /* 第一张停留 */
+            25% { transform: translateX(-25%); }
+            45% { transform: translateX(-25%); } /* 第二张停留 */
+            50% { transform: translateX(-50%); }
+            70% { transform: translateX(-50%); } /* 第三张停留 */
+            75% { transform: translateX(-75%); }
+            95% { transform: translateX(-75%); } /* 第四张停留 */
+            100% { transform: translateX(0); }
         }
 
-        /* 公司简介部分布局 */
-       .about-container {
+        /* 关于我们样式 */
+        #about {
+            padding: 40px 20px;
+        }
+
+        #about h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
             display: flex;
-            margin-top: 40px;
-            align-items: center; /* 垂直居中对齐 */
+            flex-direction: column;
+            align-items: center;
         }
 
-       .about-image {
-            width: 72%; /* 原宽度 40%，增加 80% 后约为 72% */
-            position: relative;
-            height: 350px; /* 高度不变 */
-            overflow: hidden;
-            margin: 0 20px; /* 增加左右边距 */
-        }
-
-       .about-image img {
+        .about-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 800px;
+            margin-bottom: 30px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
             position: absolute;
             opacity: 0;
-            transition: opacity 1s ease - in - out;
+            transition: opacity 1s ease;
         }
 
-       .about-image img.active {
+        .about-image img.active {
             opacity: 1;
         }
 
-       .about-text {
-            width: 28%; /* 调整文字区域宽度 */
+        .about-text {
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
-            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
-        /* 公司简介标题样式 */
-       .about-text h3 {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* 公司简介段落样式 */
-       .about-text p {
-            text-indent: 2em;
-            text-align: left;
-        }
-
-        /* 内容区域 */
+        /* 产品中心样式 */
         section {
             padding: 20px;
             text-align: center;
@@ -187,8 +180,8 @@
 
        .product-item img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 200px; /* 固定产品图片高度 */
+            object-fit: cover; /* 保持比例填充容器 */
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
@@ -201,36 +194,109 @@
             margin: 10px 0;
         }
 
-        /* 合作单位 */
+        /* 优化后的关于我们部分 */
+        #about {
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* 增加间距 */
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 1000px;
+            height: 400px; /* 增大高度 */
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .about-image img.active {
+            opacity: 1;
+        }
+
+        .about-text {
+            width: 100%;
+            max-width: 1000px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px; /* 增加与图片间距 */
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .carousel {
+                height: 300px;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel {
+                height: 200px;
+            }
+
+            .about-image {
+                height: 200px;
+                margin-bottom: 15px;
+            }
+
+            .about-text {
+                padding: 20px;
+            }
+        }
+
+        /* 合作单位样式 */
         #partners {
             background-color: #f9f9f9;
             padding: 20px;
         }
 
-       .partners-image img {
+        .partners-image img {
             width: 100%;
             max-width: 800px;
-            height: auto;
             display: block;
             margin: 0 auto;
         }
 
-        /* 底部 */
+        /* 联系我们样式 */
+        #contact {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 底部样式 */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px 0;
         }
-
-        footer p {
-            margin: 0;
-        }
     </style>
 </head>
 
 <body>
-    <!-- 头部 -->
     <header>
         <div class="logo">
             <img src="商标.png" alt="公司Logo">
@@ -245,58 +311,53 @@
         </nav>
     </header>
 
-    <!-- 轮播图 -->
     <div class="carousel">
         <div class="carousel-inner">
-            <img src="小炒黄牛肉.jpg" alt="轮播图2">
-            <img src="黑椒风味柳.png" alt="轮播图3">
-            <img src="精品霞糕.png" alt="轮播图4">
-            <img src="千叶豆腐.png" alt="轮播图5">
+            <img src="小炒黄牛肉.jpg" alt="产品1">
+            <img src="黑椒风味柳.png" alt="产品2">
+            <img src="精品霞糕.png" alt="产品3">
+            <img src="千叶豆腐.png" alt="产品4">
         </div>
     </div>
 
-    <!-- 公司简介部分 -->
     <section id="about">
         <h2>关于我们</h2>
-        <div class="about-container">
+        <div class="about-content">
             <div class="about-image">
-                <img src="about_image1.jpg" alt="公司相关图片1" class="active">
-                <img src="about_image2.jpg" alt="公司相关图片2">
-                <img src="about_image3.jpg" alt="公司相关图片3">
+                <img src="about_image1.jpg" alt="公司图片1" class="active">
+                <img src="about_image2.jpg" alt="公司图片2">
+                <img src="about_image3.jpg" alt="公司图片3">
             </div>
             <div class="about-text">
                 <h3>公司简介</h3>
-                <p>江苏好又香食品科技有限公司扎根于历史文化底蕴深厚的淮安，这里人文荟萃，为企业发展提供了肥沃的土壤。公司创业历程可追溯至 1997 年，一对怀揣梦想的年轻工人在苏州开启创业之旅，从南北货批发，再到承包学校食堂积累食品行业经验，一路拼搏前行。2009 年在苏州吴中区创办苏州好又香食品有限公司，正式进军食品加工领域，后经多次发展变革，2023 年 4 月迁至淮安洪泽经济开发区，正式更名为江苏好又香食品科技有限公司，并保留苏州冷库基地，不断探索食品科技新领域。</p>
-                <p>公司作为洪泽安全食品的代表企业，始终将食品安全与品质放在首位。目前主营霞糕、千叶豆腐、牛肉片等调理肉制品业务，奉行严格的生产标准和质量把控体系。在销售布局上，已在江苏淮安、苏州等地建立起销售中心，构建了广泛的销售网络，产品畅销多地，深受消费者信赖。</p>
-                <p>多年来，公司凭借创业者坚定的信念与不懈努力，在食品行业深耕细作，生产经营逐步走向正规化、标准化。公司坚持稳中有进、合作共赢的战略，致力于打造安全、美味、放心的产品，秉持 “追求更好” 的理念，向着更加辉煌的未来大步迈进。</p>
+                <p>江苏好又香食品科技有限公司扎根于历史文化底蕴深厚的淮安，这里人文荟萃，为企业发展提供了肥沃的土壤。2009 年在苏州吴中区创办苏州好又香食品有限公司，正式进军食品加工领域，后经多次发展变革，2023 年迁至淮安洪泽经济开发区，正式更名为江苏好又香食品科技有限公司，不断探索食品科技新领域。</p>
+                <p>公司作为洪泽安全食品的代表企业，始终将食品安全与品质放在首位。目前主营霞糕、千叶豆腐、牛肉片等调理肉制品业务，奉行严格的生产标准和质量把控体系。在销售布局上，已在江苏淮安、苏州等地建立起销售中心，构建了广泛的销售网络，产品畅销多地，深受消费者信赖。多年来，公司凭借创业者坚定的信念与不懈努力，在食品行业深耕细作，生产经营逐步走向正规化、标准化。公司坚持稳中有进、合作共赢的战略，致力于打造安全、美味、放心的产品，秉持 “追求更好” 的理念，向着更加辉煌的未来大步迈进。</p>
             </div>
         </div>
     </section>
 
-    <!-- 产品中心 -->
-    <section id="products">
-        <h2>产品中心</h2>
-        <div class="products">
-            <div class="product-item">
-                <img src="小炒黄牛肉.jpg" alt="小炒牛肉片">
-                <h3>小炒牛肉片</h3>
-            </div>
-            <div class="product-item">
-                <img src="黑椒风味柳.png" alt="黑椒风味柳">
-                <h3>黑椒风味柳</h3>
-            </div>
-            <div class="product-item">
-                <img src="精品霞糕.png" alt="精品霞糕">
-                <h3>精品霞糕</h3>
-            </div>
-            <div class="product-item">
-                <img src="千叶豆腐.png" alt="千叶豆腐">
-                <h3>千叶豆腐</h3>
-            </div>
+            <section id="products">
+                <h2>产品中心</h2>
+                <div class="products">
+                    <div class="product-item">
+                        <img src="小炒黄牛肉.jpg" alt="小炒牛肉片">
+                        <h3>小炒牛肉片</h3>
+                    </div>
+                    <div class="product-item">
+                        <img src="黑椒风味柳.png" alt="黑椒风味柳">
+                        <h3>黑椒风味柳</h3>
+                    </div>
+                    <div class="product-item">
+                        <img src="精品霞糕.png" alt="精品霞糕">
+                        <h3>精品霞糕</h3>
+                    </div>
+                    <div class="product-item">
+                        <img src="千叶豆腐.png" alt="千叶豆腐">
+                        <h3>千叶豆腐</h3>
+                    </div>
         </div>
     </section>
 
-    <!-- 合作单位 -->
     <section id="partners">
         <h2>合作单位</h2>
         <div class="partners-image">
@@ -304,39 +365,40 @@
         </div>
     </section>
 
-    <!-- 联系我们 -->
     <section id="contact">
         <h2>联系我们</h2>
         <p>电话：18114649936</p>
         <p>地址：江苏省淮安市洪泽经济开发区砚马河路23号</p>
     </section>
 
-    <!-- 底部 -->
     <footer>
         <p>&copy; 2025 江苏好又香食品科技有限公司</p>
     </footer>
+
     <script>
-        // 自动切换图片的脚本
-        const aboutImages = document.querySelectorAll('.about-image img');
-        let currentIndex = 0;
-
-        function showImage(index) {
-            aboutImages.forEach((img, i) => {
-                if (i === index) {
-                    img.classList.add('active');
-                } else {
-                    img.classList.remove('active');
-                }
-            });
+        // 增强版轮播控制
+        function startCarousel() {
+            const carouselInner = document.querySelector('.carousel-inner');
+            let position = 0;
+            
+            setInterval(() => {
+                position = position >= 300 ? 0 : position + 25;
+                carouselInner.style.transform = `translateX(-${position}%)`;
+            }, 5000); // 每5秒切换
         }
+        startCarousel();
 
-        showImage(currentIndex);
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % aboutImages.length;
-            showImage(currentIndex);
-        }, 3000);
+        // 关于我们图片切换
+        let currentImgIndex = 0;
+        const aboutImages = document.querySelectorAll('.about-image img');
+        
+        function switchAboutImage() {
+            aboutImages[currentImgIndex].classList.remove('active');
+            currentImgIndex = (currentImgIndex + 1) % aboutImages.length;
+            aboutImages[currentImgIndex].classList.add('active');
+            setTimeout(switchAboutImage, 3000);
+        }
+        switchAboutImage();
     </script>
 </body>
-
 </html>
